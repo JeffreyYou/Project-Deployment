@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./logs:/var/log/nginx
+    image: JeffreyYou-nginx
+
+  self_website:
+    build: ./self_website
+    ports:
+      - "3000:3000"
+    image: JeffreyYou-self_website
+  
+  # ws_server:
+  #   build: ./node
+  #   ports:
+  #     - "8000:8000"
+  #   image: JeffreyYou-ws_server
+    

@@ -1,0 +1,46 @@
+@import "normalize.css";
+
+body, html, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, header, menu, section, p, input, td, th, ins {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: black;
+}
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+.root-page {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    /* background-image: url("../images/picture04.jpg"); */
+    height: 100vh;
+    height: auto;
+    /* background-color: black; */
+    z-index: 1;;
+    transition: background-image 1s ease-in-out;
+
+}
+
+.wrapper-center {
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+    
+
+@font-face {
+    font-family: play-google;
+    src: url("../../../public/fonts/Play-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../../../public/fonts/Roboto-Light.ttf");
+}
+
