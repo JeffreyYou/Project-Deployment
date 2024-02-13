@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="root-page">
-      <BrowserRouter>
+      <BrowserRouter basename="/website">
         <AppHeader />
         <Suspense fallback={null}>
           <AnimatedRoute />

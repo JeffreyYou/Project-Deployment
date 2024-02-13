@@ -8,13 +8,13 @@ services:
       - "443:443"
     volumes:
       - ./logs:/var/log/nginx
-    image: JeffreyYou-nginx
+    image: jeffrey-nginx
 
   self_website:
     build: ./self_website
     ports:
-      - "3000:3000"
-    image: JeffreyYou-self_website
+      - "3000:80"
+    image: jeffrey-self_website
   
   # ws_server:
   #   build: ./node

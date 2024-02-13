@@ -1,7 +1,6 @@
 import os
 import subprocess
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # tutorial: https://blog.csdn.net/qq_27825451/article/details/102909772
     # print( subprocess.call(["ls", "-l"], shell=False) )
