@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+
+WORKDIR /chat_ai
+
+COPY . .
+
+RUN pip install -r requirements.txt
+RUN pip install uvicorn[standard]
+
+# RUN chmod +x entrypoint.sh
+
+EXPOSE 8000
+
+# CMD ["/bin/sh", "entrypoint.sh"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0"]
