@@ -22,10 +22,10 @@ function App() {
     imagesToPreload.forEach((image) => {
       const img = new Image();
       img.onload = () => {
-        console.log("loaded image", image)
+        // console.log("loaded image", image)
       }
       img.onerror = () => {
-        console.error("Error loading image", image);
+        // console.error("Error loading image", image);
       };
       img.src = image;
     })
