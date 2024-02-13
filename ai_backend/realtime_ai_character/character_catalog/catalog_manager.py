@@ -143,7 +143,7 @@ class CatalogManager(Singleton):
         logger.info(f"Loaded {len(self.characters)} characters: IDs {list(self.characters.keys())}")
 
     def load_character_from_sql_database(self):
-        logger.info("Started loading characters from SQL database")
+        # logger.info("Started loading characters from SQL database")
         character_models = self.sql_db.query(CharacterModel).all()
 
         with self.sql_load_lock.gen_wlock():

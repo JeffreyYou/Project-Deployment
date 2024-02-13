@@ -19,10 +19,10 @@ export function getApiServerUrl() {
 export function getWsServerUrl(url) {
   const [protocol, host, port] = getProtocolAndHost(url);
 
-  // const ws_scheme = protocol === 'https:' ? 'wss' : 'ws';
-  // return `${ws_scheme}://${host}${port ? `${port}`: ''}`;
+  const ws_scheme = protocol === 'https:' ? 'wss' : 'ws';
+  return `${ws_scheme}://${host}${port ? `${port}`: ''}`;
 
   // return `wss://${host}${port ? `${port}`: ''}`;
-  return `wss://fissionailab.com`;
+  // return `wss://fissionailab.com`;
   // return `wss://127.0.0.1:8000`;
 }

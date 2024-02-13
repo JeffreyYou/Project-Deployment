@@ -1,24 +1,104 @@
 version: '3.8'
 
 services:
-  nginx:
-    build: ./nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./logs:/var/log/nginx
-    image: jeffrey-nginx
+  # nginx:
+  #   build: 
+  #     context: ./nginx
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./logs:/var/log/nginx
+  #   image: jeffrey-nginx
 
-  self_website:
-    build: ./self_website
-    ports:
-      - "3000:80"
-    image: jeffrey-self_website
+  # self_website:
+  #   build: 
+  #     context: ./self_website
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   ports:
+  #     - "3000:80"
+  #   image: jeffrey-self_website
   
+  web:
+    build:
+      context: ./ai_frontend
+      dockerfile: Dockerfile.dev
+      args:
+        NEXT_PUBLIC_FIREBASE_API_KEY: AIzaSyAVqhwbdB8I56HAMVVlgJKZcfrBkKI2AhQ
+        NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: assistly-kubernetes.firebaseapp.com
+        NEXT_PUBLIC_FIREBASE_PROJECT_ID: assistly-kubernetes
+        NEXT_PUBLIC_FIREBASE_APP_ID: 1:806733379891:web:48bf124c0d9b90298e6646
+        REACT_APP_BUILD_NUMBER: 0.0.1
+        NEXT_PUBLIC_API_HOST: http://localhost:8500
+        API_HOST: http://ai_backend:8500
+    ports:
+      - "3000:3000"
+    depends_on:
+      ai_backend:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    environment:
+      - NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyAVqhwbdB8I56HAMVVlgJKZcfrBkKI2AhQ
+      - NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=assistly-kubernetes.firebaseapp.com
+      - NEXT_PUBLIC_FIREBASE_PROJECT_ID=assistly-kubernetes
+      - NEXT_PUBLIC_FIREBASE_APP_ID=1:806733379891:web:48bf124c0d9b90298e6646
+      - REACT_APP_BUILD_NUMBER=0.0.1
+      - NEXT_PUBLIC_API_HOST=http://localhost:8500
+      - API_HOST=http://ai_backend:8500
+
+  db:
+    build:
+      context: ./ai_backend
+      dockerfile: Dockerfile.postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/realchar
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ai_backend:
+    build: 
+      context: ./ai_backend
+      dockerfile: Dockerfile
+    ports:
+      - "8500:8500"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - ./ai_backend/.env
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   # ws_server:
   #   build: ./node
   #   ports:
   #     - "8000:8000"
   #   image: JeffreyYou-ws_server
+
+volumes:
+  db:
+    driver: local
+
+networks:
+  default:
+    driver: bridge
     

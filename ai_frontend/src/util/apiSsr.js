@@ -1,6 +1,7 @@
 const host = process.env.API_HOST;
 
 export async function getCharacters() {
+  console.log(host)
   try {
     const res = await fetch(`${host}/characters`, { next: { revalidate: 5 } });
     const characters = await res.json();
