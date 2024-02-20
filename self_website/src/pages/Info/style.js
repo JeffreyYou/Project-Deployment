@@ -41,14 +41,15 @@ section {
     margin: 20px 0; 
 
 }
-button {
+a {
     color: white;
     background-color: black; 
     padding: 10px;
     cursor: pointer;
     border: 2px solid white;
+    text-decoration: none;
 }
-button:hover {
+a:hover {
   background-color: white;
   color: black;
   transition: 0.4s;

@@ -48,30 +48,30 @@ export default function HamburgerMenu() {
 
   return (
     <>
-    <AnimatePresence>
-    {open && (
-    <motion.aside
-      className={styles.backdrop}
-      initial={{ width: 0 }}
-      animate={{ width: "100vw"}}
-      exit={{
-        width: 0,
-        transition: {
-          delay: 0.1,
-          duration: 0.3
-        }
-      }}
-    >
-      <motion.div
-        className={styles.menu}
-        initial="closed"
-        animate="open"
-        exit="closed"
-        variants={sideVariants}
-      >
-        <section className="p-6 pt-20">
-          <header className="text-lg my-3">System settings</header>
-          {/* <section>
+      <AnimatePresence>
+        {open && (
+          <motion.aside
+            className={styles.backdrop}
+            initial={{ width: 0 }}
+            animate={{ width: "100vw" }}
+            exit={{
+              width: 0,
+              transition: {
+                delay: 0.1,
+                duration: 0.3
+              }
+            }}
+          >
+            <motion.div
+              className={styles.menu}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={sideVariants}
+            >
+              <section className="p-6 pt-20">
+                <header className="text-lg my-3">System settings</header>
+                {/* <section>
             <header className="text-sm font-light my-3">Large language model(LLM)</header>
             {user == null ? (
               <Select
@@ -143,34 +143,34 @@ export default function HamburgerMenu() {
             )}
 
           </section> */}
-          <section>
-            <header className="text-sm font-light my-3">Preferred language</header>
-            <Select
-              labelPlacement="outside"
-              aria-label="language select"
-              selectedKeys={preferredLanguage}
-              onChange={handleLanguageChange}
-              radius="sm"
-              classNames={{
-                trigger: 'bg-white/10 data-[hover=true]:bg-white/20',
-                value: 'font-light pl-4 text-base',
-                popover: 'bg-dropdown',
-              }}
-            >
-              <SelectSection>
-            {languageList.map((item) => (
-              <SelectItem key={item} textValue={item}
-                classNames={{
-                  base: 'data-[hover=true]:bg-default/40 data-[selectable=true]:focus:bg-default/40 data-[selected=true]:pointer-events-none'
-                }}
-              >
-                <div className="font-light">{item}</div>
-              </SelectItem>
-            ))}
-              </SelectSection>
-            </Select>
-          </section>
-          {/* <section>
+                <section>
+                  <header className="text-sm font-light my-3">Preferred language</header>
+                  <Select
+                    labelPlacement="outside"
+                    aria-label="language select"
+                    selectedKeys={preferredLanguage}
+                    onChange={handleLanguageChange}
+                    radius="sm"
+                    classNames={{
+                      trigger: 'bg-white/10 data-[hover=true]:bg-white/20',
+                      value: 'font-light pl-4 text-base',
+                      popover: 'bg-dropdown',
+                    }}
+                  >
+                    <SelectSection>
+                      {languageList.map((item) => (
+                        <SelectItem key={item} textValue={item} 
+                          classNames={{
+                            base: 'data-[hover=true]:bg-default/40 data-[selectable=true]:focus:bg-default/40 data-[selected=true]:pointer-events-none'
+                          }}
+                        >
+                          <div className="font-light">{item}</div>
+                        </SelectItem>
+                      ))}
+                    </SelectSection>
+                  </Select>
+                </section>
+                {/* <section>
             <header className="text-sm font-light my-3">Advanced options</header>
             <div className="flex flex-row gap-4 justify-between my-3">
               <p>Journal Mode</p>
@@ -182,23 +182,23 @@ export default function HamburgerMenu() {
               />
             </div>
           </section> */}
-        </section>
-      </motion.div>
-    </motion.aside>
-    )}
-    </AnimatePresence>
-    <Button
-      isIconOnly
-      variant="light"
-      className="min-w-8 z-50"
-      onPress={cycleOpen}
-    >
-      {open ? (
-        <RxCross2 size="1.75em"/>
-      ) : (
-        <RxHamburgerMenu size="1.75em"/>
-      )}
-    </Button>
+              </section>
+            </motion.div>
+          </motion.aside>
+        )}
+      </AnimatePresence>
+      <Button
+        isIconOnly
+        variant="light"
+        className="min-w-8 z-50"
+        onPress={cycleOpen}
+      >
+        {open ? (
+          <RxCross2 size="1.75em" />
+        ) : (
+          <RxHamburgerMenu size="1.75em" />
+        )}
+      </Button>
     </>
   );
 }

@@ -9,7 +9,7 @@ const prompt = Prompt({
 });
 
 export const metadata = {
-  title: 'Fission AI.',
+  title: 'AI Character | Jeffrey You',
   description:
     'Create, customize and talk to your AI Character/Companion in realtime',
 };

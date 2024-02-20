@@ -26,7 +26,7 @@ export default function Header() {
         <NavbarBrand>
           <Link href='/'>
             {/* <Image priority src={logoSim} alt='Fission.ai' className="block"  height={80}/> */}
-            <Image priority src={logo} alt='Fission.ai' className="block" width={120}/>
+            {/* <Image priority src={logo} alt='Fission.ai' className="block" width={120}/> */}
           </Link>
           
         </NavbarBrand>

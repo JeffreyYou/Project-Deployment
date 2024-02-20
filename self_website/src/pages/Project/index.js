@@ -42,7 +42,7 @@ const Project = memo(() => {
               className="motion-div"
         >
 
-        <a href='https://github.com/JeffreyYou'  className='a-link'  rel="noreferrer">
+        <a href='https://github.com/JeffreyYou/Reddit-Forum'  className='a-link'  rel="noreferrer">
             <motion.div 
                 className='motion-box microservice'
                 // whileHover={ {scale: 1.2, backgroundColor: "#105b72c2"}}
@@ -53,7 +53,7 @@ const Project = memo(() => {
               <WorkDemo><p className='text-info'>Microservices Platform</p></WorkDemo>
             </motion.div>
         </a>
-        <a href='https://github.com/JeffreyYou' target="_blank" className='a-link'  rel="noreferrer">
+        <a href='https://jeffreyyou.com' target="_blank" className='a-link'  rel="noreferrer">
             <motion.div 
                 className='motion-box ai-character'
                 whileHover={ {scale: 1.2}}

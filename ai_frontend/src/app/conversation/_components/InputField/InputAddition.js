@@ -17,7 +17,7 @@ export default function InputAddition({
   async function handleMenuClick(key) {
     switch(key) {
       case 'call':
-        setText('/call number:');
+        // setText('/call number:');
         return;
       default:
         return;
@@ -50,12 +50,20 @@ export default function InputAddition({
           onAction={handleMenuClick}
         >
           <DropdownSection title="Actions">
-            <DropdownItem
+            {/* <DropdownItem
               key="call"
               description="Make a outgoing call"
               startContent={<FiPhoneCall size="1.5em"/>}
             >
               Make a call
+            </DropdownItem> */}
+            <DropdownItem
+              key="call"
+              description="Make a outgoing call"
+              startContent={<FiPhoneCall size="1.5em"/>}
+              isDisabled={true}
+            >
+              Make a call (coming soon!)
             </DropdownItem>
           </DropdownSection>
         </DropdownMenu>

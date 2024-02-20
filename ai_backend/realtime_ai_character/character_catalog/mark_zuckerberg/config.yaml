@@ -22,7 +22,7 @@ user: | # you don't need to change this for most cases
   ---
   {query}
 text_to_speech_use: ELEVEN_LABS
-voice_id: X1EvwdzTE8C8Sffd40mn
+voice_id: AzqOcPFgRbpHuFe8aHwG
 author_name: Shaun
 visibility: public
 order: 7

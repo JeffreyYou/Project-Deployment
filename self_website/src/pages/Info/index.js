@@ -40,13 +40,15 @@ const Info = memo(() => {
               <div style={{ fontSize: '60px', padding: '50px', height:'100px', width: '100%', display: 'flex', justifyContent: 'center' }}>Hi, There!</div>
               <div style={{ display:'flex', flexDirection:'column', height: 'calc(100% - 200px)'}}>
                 <div style={{ fontSize: '22px', padding: '0 50px 50px' }}>My Name is Jeffrey (Qinsongen) You, Nice to meet you!</div>
-                <div style={{ fontSize: '22px', padding: ' 50px' }}>I'm a full-stack software enginner with the passion and enthusiasm to embarce the new and innovating technologies. Technology has become a big part of all of our lives, and I seek to become a big part of tech as well.</div>
-                <div style={{ fontSize: '22px', padding: ' 50px' }}>I bevelie the hardest part of anything is starting it. Always say Watch Me, not Why Me. Thank you for taking the time to view my website, I hope we have a chance to work together.</div>
+                <div style={{ fontSize: '22px', padding: ' 50px' }}>I'm a full-stack software enginner with the passion and enthusiasm to embarce the new and innovating technologies. I bevelie the hardest part of anything is starting it, we should always say watch me, not why me.</div>
+                <div style={{ fontSize: '22px', padding: ' 50px' }}>Thank you for taking the time to view my website. It's been a pleasure to share my work with you, and I hope it has sparked an interest in what we can achieve together. Have a nice day!</div>
               </div>
             </AboutMe>
             <ImageWrapper><Image /></ImageWrapper>
           </div>
-          <button>RESUME</button>
+          <a href='https://docs.google.com/document/d/1rBok1OhQbxdUO_aC0h5MYeAUnf5int76Pz65SP8HaaQ/edit?usp=sharing' target="_blank" className='a-link'  rel="noreferrer">RESUME</a>
+          {/* <button >RESUME</button> */}
+          {/* https://docs.google.com/document/d/1rBok1OhQbxdUO_aC0h5MYeAUnf5int76Pz65SP8HaaQ/edit?usp=sharing */}
         </div>
         {/* <motion.h2 className='text' style={{ y }}>{`#00${id}`}</motion.h2> */}
         <motion.h2 className='text' style={{ y, visibility: 'hidden' }}>{`#00${id}`}</motion.h2>

@@ -38,9 +38,11 @@ export default function Footer() {
         </Link> */}
       </div>
       <p className='copyright text-xs text-center my-7'>
-        Copyright © 2023 FissionAILab. All rights reserved. Any AI character&apos;s statements are
-        fictional and don&apos;t represent actual beliefs or opinions. Ver:{' '}
-        {process.env.NEXT_PUBLIC_RC_BUILD_NUMBER}
+        Any AI character&apos;s statements are
+        fictional and don&apos;t represent actual beliefs or opinions.
+      </p>
+      <p className='text-xs text-center my-7'>
+        This is a demo project for demonstration purposes only. Some features and functionalities are disabled.
       </p>
     </footer>
   );
