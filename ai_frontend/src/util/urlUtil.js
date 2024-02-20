@@ -21,7 +21,7 @@ export function getWsServerUrl(url) {
 
   const ws_scheme = protocol === 'https:' ? 'wss' : 'ws';
   const res = `${ws_scheme}://${host}${port ? `${port}`: ''}`;
-  const publicUrl = 'wss://localhost/ai-character'
+  const publicUrl = 'wss://jeffreyyou.com/ai-character'
   return publicUrl;
 
   // return `wss://${host}${port ? `${port}`: ''}`;
