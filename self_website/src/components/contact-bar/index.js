@@ -27,7 +27,7 @@ const ContactBar = memo(() => {
                 <GithubLogo className='github' />
             </motion.div>
         </a>
-        <a href='https://www.linkedin.com/in/jeffreyyou-540610103/' target="_blank">
+        <a href='https://www.linkedin.com/in/jeffreyyouusc' target="_blank">
             <motion.div 
                 className='motion-box'
                 whileHover={ {scale: 1.2}}

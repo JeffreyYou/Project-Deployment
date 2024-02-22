@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
   nginx:
+    image: jeffreyyou/jeffrey-nginx
+    container_name: jeffrey-self_website-1
     build: 
       context: ./nginx
       dockerfile: Dockerfile
@@ -11,20 +13,20 @@ services:
       - "443:443"
     volumes:
       - ./logs:/var/log/nginx
-    image: jeffrey-nginx
     depends_on:
       - ai_web
 
   self_website:
+    image: jeffrey-self_website
     build: 
       context: ./self_website
       dockerfile: Dockerfile
     restart: always
     ports:
       - "3001:80"
-    image: jeffrey-self_website
   
   ai_web:
+    image: jeffreyyou/ai-frontend
     build:
       context: ./ai_frontend
       dockerfile: Dockerfile.dev
@@ -56,9 +58,9 @@ services:
       # - API_HOST=http://ai_backend:8500
       - NEXT_PUBLIC_API_HOST=https://localhost/ai-character/backend/ws/
       - API_HOST=http://ai_backend:8500
-    image: ai-frontend
 
   db:
+    image: jeffreyyou/ai-db
     build:
       context: ./ai_backend
       dockerfile: Dockerfile.postgres
@@ -76,10 +78,10 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    image: ai-db
     
 
   ai_backend:
+    image: jeffreyyou/ai-backend
     build: 
       context: ./ai_backend
       dockerfile: Dockerfile
@@ -98,7 +100,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    image: ai-backend
     
 
   # ws_server:

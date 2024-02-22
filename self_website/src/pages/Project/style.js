@@ -115,7 +115,8 @@ export const WorkDemo = styled.div`
     .text-info {
         color: white;
         font-family: "play-google";
-        font-size: 35px;
+        /* font-size: 35px; */
+        font-size: 1.5vw;
         /* display: none; */
         transition: opacity 0.9s ease;
         opacity: 0;

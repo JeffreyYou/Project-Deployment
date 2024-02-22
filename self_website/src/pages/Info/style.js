@@ -82,17 +82,40 @@ export const AboutMe = styled.div`
     height: 100%;
     background-color: black;
     display: flex;
-    /* align-items:center; */
-    /* justify-content: center; */
     flex-direction: column;
-    /* justify-content: space-around; */
-    /* justify-content: space-between; */
+
+    .info-title {
+      /* font-size: 60px; */
+      font-size: 3vw;
+      margin:2vw 2vw 0 2vw;
+      /* height: 100px; */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .info-content {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      /* height: calc(100% - 200px); */
+      padding: 0 2vw 4vw 4vw;
+      justify-content: space-between;
+      font-size: 1.15vw;
+      div {
+        height: 33%;
+        display: flex;
+        align-items: center;
+      }
+    }
+
 `
 export const ImageWrapper = styled.div`
     width: 40%;
     height: 100%;
     padding: 3%;
     box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
 `
 export const Image = styled.div`
   background-image: url(${SelfImage1});
@@ -101,5 +124,14 @@ export const Image = styled.div`
   width: 100%;
   height: 100%;
 `
+export const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
 
 

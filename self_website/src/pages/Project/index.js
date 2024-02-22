@@ -42,7 +42,7 @@ const Project = memo(() => {
               className="motion-div"
         >
 
-        <a href='https://github.com/JeffreyYou/Reddit-Forum'  className='a-link'  rel="noreferrer">
+        <a href='https://github.com/JeffreyYou/Reddit-Forum' target="_blank"  className='a-link'  rel="noreferrer">
             <motion.div 
                 className='motion-box microservice'
                 // whileHover={ {scale: 1.2, backgroundColor: "#105b72c2"}}

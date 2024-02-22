@@ -42,7 +42,12 @@ export const ExpertiseContent = styled.div`
 `
 
 export const Title = styled.div`
-    font-size: 6vw;
+    @media (max-width: 1400px) {
+        font-size: 5vw;
+    }
+    @media (min-width: 1400px) {
+        font-size: 6vw;
+    }
     /* font-size: 140px; */
     color: white;
     font-family: "play-google";
@@ -53,9 +58,17 @@ export const Title = styled.div`
 export const List = styled.div`
     width: 100%;
     height: 100%;
-    min-height: 530px;
     display:flex;
     justify-content: center;
     /* background-color: green; */
+    font-size: 14px;
+    @media (max-width: 1400px) {
+        min-height: 410px;
+        
+    }
+    @media (min-width: 1400px) {
+        min-height: 530px;
+
+    }
     
 `

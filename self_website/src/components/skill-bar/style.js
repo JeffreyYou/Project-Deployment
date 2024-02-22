@@ -1,13 +1,20 @@
 import styled from "styled-components";
 
 export const SkillBarWrapper = styled.div`
-    width: 380px;
     height: 100%;
     /* background-color: red; */
     display: inline-block;
     border: 1px solid white;
     /* border-radius: 50px; */
-
+    
+    /* width: 380px; */
+    @media  (max-width: 1400px) {
+        width: 340px;
+        
+    }
+    @media  (min-width: 1400px) {
+        width: 380px;
+    }
 `
 
 export const Title = styled.div`
@@ -18,9 +25,14 @@ export const Title = styled.div`
 
     .svg-wrapper {
         width: 80px;
-        height: 110px;
         display: inline-block;
         position: relative;
+        @media  (max-width: 1400px) {
+            height: 80px;
+        }
+        @media  (min-width: 1400px) {
+            height: 110px;
+        }
         .svg{
             position:absolute;
             width: 50px;
@@ -33,17 +45,29 @@ export const Title = styled.div`
     
     .title-wrapper {
         width: calc(100% - 80px);
-        height: 110px;
+        @media  (max-width: 1400px) {
+            height: 63px;
+            margin-top: 17px;
+        }
+        @media  (min-width: 1400px) {
+            height: 110px;
+            margin-top: 30px;
+
+        }
         display: inline-block;
         /* position: relative; */
 
         vertical-align: top;
-        margin-top: 30px;
         /* background-color: ${props => props.underline }; */
 
         /* text-align: center; */
         .title {
-            font-size: 30px;
+            @media  (max-width: 1400px) {
+                font-size: 24px;
+            }
+            @media  (min-width: 1400px) {
+                font-size: 30px;
+            }
             color: white; 
             position: relative;
 
@@ -61,7 +85,12 @@ export const Title = styled.div`
         }
         .tech-stack {
             /* width: 190px; */
-            font-size: 24px;
+            @media  (max-width: 1400px) {
+                font-size: 20px;
+            }
+            @media  (min-width: 1400px) {
+                font-size: 24px;
+            }
             color: white; 
         }
     }
@@ -72,8 +101,9 @@ export const Content = styled.div`
     color: white; 
     font-family: roboto;
     position: relative;
+    
+    
     height: calc(100% - 140px);
-
 
     .skill-wrapper {
         width: 80%;
@@ -85,8 +115,16 @@ export const Content = styled.div`
         .skill {
             height: 100%;
             .skill-inner{
-                height: 320px;
-                font-size: 14px;
+                @media  (max-width: 1400px) {
+                    height: 287px;
+                    font-size: 12px;
+                }
+                @media  (min-width: 1400px) {
+                    height: 320px;
+                    font-size: 14px;
+                }
+
+                /* font-size: 1vw; */
             }
         }
         .skill::before {
